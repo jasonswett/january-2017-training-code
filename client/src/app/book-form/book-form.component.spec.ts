@@ -5,6 +5,8 @@ import { DebugElement } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { BookFormComponent } from './book-form.component';
+import { BookService } from '../book.service';
+import { MockBookService } from '../../testing/mock-book.service';
 
 describe('BookFormComponent', () => {
   let component: BookFormComponent;
@@ -14,6 +16,13 @@ describe('BookFormComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ BookFormComponent ],
       imports: [ FormsModule ]
+    })
+    .overrideComponent(BookFormComponent, {
+      set: {
+        providers: [
+          { provide: BookService, useClass: MockBookService }
+        ]
+      }
     })
     .compileComponents();
   }));
