@@ -12,4 +12,7 @@ export class BookFormComponent implements OnInit {
   ngOnInit() {
   }
 
+  onSubmit() {
+    console.log('submitted');
+  }
 }
