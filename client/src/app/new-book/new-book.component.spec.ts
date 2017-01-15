@@ -4,6 +4,8 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { NewBookComponent } from './new-book.component';
+import { BookFormComponent } from '../book-form/book-form.component';
+import { MockBookFormComponent } from '../../testing/mock-book-form.component';
 
 describe('NewBookComponent', () => {
   let component: NewBookComponent;
@@ -11,7 +13,10 @@ describe('NewBookComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NewBookComponent ]
+      declarations: [
+        NewBookComponent,
+        MockBookFormComponent
+      ]
     })
     .compileComponents();
   }));

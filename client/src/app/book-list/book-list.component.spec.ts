@@ -5,9 +5,7 @@ import { DebugElement } from '@angular/core';
 
 import { BookService } from '../book.service';
 import { BookListComponent } from './book-list.component';
-import { BookFormComponent } from '../book-form/book-form.component';
 import { MockBookService } from '../../testing/mock-book.service';
-import { MockBookFormComponent } from '../../testing/mock-book-form.component';
 
 describe('BookListComponent', () => {
   let component: BookListComponent;
@@ -16,8 +14,7 @@ describe('BookListComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        BookListComponent,
-        MockBookFormComponent
+        BookListComponent
       ]
     })
     .overrideComponent(BookListComponent, {
