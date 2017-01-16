@@ -3,6 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { BookFormComponent } from './book-form.component';
 import { BookService } from '../book.service';
@@ -15,7 +16,10 @@ describe('BookFormComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ BookFormComponent ],
-      imports: [ FormsModule ]
+      imports: [
+        FormsModule,
+        RouterTestingModule
+      ]
     })
     .overrideComponent(BookFormComponent, {
       set: {
