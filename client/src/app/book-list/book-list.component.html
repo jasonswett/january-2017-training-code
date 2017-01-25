@@ -3,6 +3,6 @@
 <table class="table table-bordered table-striped">
   <tr *ngFor="let book of books">
     <td>{{ book.name }}</td>
-    <td><a routerLink="" (click)="delete(book)" class="btn btn-default">Delete</a></td>
+    <td><a routerLink="" (click)="delete(book)" class="btn btn-danger">Delete</a></td>
   </tr>
 </table>
