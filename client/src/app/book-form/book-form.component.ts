@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { Book } from '../book';
 import { BookService } from '../book.service';
+import 'rxjs/add/operator/map';
 
 @Component({
   selector: 'app-book-form',
@@ -18,7 +19,8 @@ export class BookFormComponent implements OnInit {
   ngOnInit() {
     this.bookService
         .get(this.bookId)
-        .subscribe(response => this.model = new Book(response.json().name, response.json().id));
+        .map(response => response.json())
+        .subscribe(response => this.model = new Book(response.name, response.id));
   }
 
   onSubmit() {
