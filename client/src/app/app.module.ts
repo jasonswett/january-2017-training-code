@@ -10,13 +10,15 @@ import { BookListComponent } from './book-list/book-list.component';
 import { BookService } from './book.service';
 import { BookFormComponent } from './book-form/book-form.component';
 import { NewBookComponent } from './new-book/new-book.component';
+import { EditBookComponent } from './edit-book/edit-book.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BookListComponent,
     BookFormComponent,
-    NewBookComponent
+    NewBookComponent,
+    EditBookComponent
   ],
   imports: [
     BrowserModule,
