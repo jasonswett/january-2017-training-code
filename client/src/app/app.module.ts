@@ -5,6 +5,8 @@ import { HttpModule } from '@angular/http';
 
 import { HomeLibraryRoutingModule } from './app-routing.module';
 
+import { Angular2TokenService } from 'angular2-token';
+
 import { AppComponent } from './app.component';
 import { BookListComponent } from './book-list/book-list.component';
 import { BookService } from './book.service';
@@ -28,7 +30,7 @@ import { NewUserComponent } from './new-user/new-user.component';
     HttpModule,
     HomeLibraryRoutingModule
   ],
-  providers: [BookService],
+  providers: [BookService, Angular2TokenService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
