@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 import { HomeLibraryRoutingModule } from './app-routing.module';
 
 import { Angular2TokenService } from 'angular2-token';
+import { AuthGuard } from './auth-guard';
 
 import { AppComponent } from './app.component';
 import { BookListComponent } from './book-list/book-list.component';
@@ -32,7 +33,11 @@ import { NewUserFormComponent } from './new-user-form/new-user-form.component';
     HttpModule,
     HomeLibraryRoutingModule
   ],
-  providers: [BookService, Angular2TokenService],
+  providers: [
+    BookService,
+    Angular2TokenService,
+    AuthGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
