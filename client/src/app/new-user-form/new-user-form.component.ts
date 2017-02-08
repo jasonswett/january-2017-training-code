@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Angular2TokenService } from 'angular2-token';
 import { User } from '../user';
 
@@ -10,7 +11,7 @@ import { User } from '../user';
 export class NewUserFormComponent implements OnInit {
   model = new User('', '', '');
 
-  constructor(private _tokenService: Angular2TokenService) {
+  constructor(private _tokenService: Angular2TokenService, private router: Router) {
     this._tokenService.init({
       registerAccountPath: '/api/auth',
       validateTokenPath: '/api/auth/validate_token'
@@ -25,6 +26,6 @@ export class NewUserFormComponent implements OnInit {
       email:                this.model.email,
       password:             this.model.password,
       passwordConfirmation: this.model.password
-    });
+    }).subscribe(res => this.router.navigate(['/']));
   }
 }
