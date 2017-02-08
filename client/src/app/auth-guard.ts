@@ -19,7 +19,7 @@ export class AuthGuard implements CanActivate {
       this._tokenService.validateToken().subscribe(
         res => observer.next(true),
         err => {
-          this.router.navigate(['/new-user']);
+          this.router.navigate(['/sign-in']);
           observer.next(false);
         });
     }); }

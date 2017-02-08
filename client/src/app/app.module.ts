@@ -16,6 +16,7 @@ import { NewBookComponent } from './new-book/new-book.component';
 import { EditBookComponent } from './edit-book/edit-book.component';
 import { NewUserComponent } from './new-user/new-user.component';
 import { NewUserFormComponent } from './new-user-form/new-user-form.component';
+import { NewUserSessionComponent } from './new-user-session/new-user-session.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { NewUserFormComponent } from './new-user-form/new-user-form.component';
     NewBookComponent,
     EditBookComponent,
     NewUserComponent,
-    NewUserFormComponent
+    NewUserFormComponent,
+    NewUserSessionComponent
   ],
   imports: [
     BrowserModule,
